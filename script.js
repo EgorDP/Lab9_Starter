@@ -5,10 +5,10 @@ form.addEventListener('submit', e => {
   let firstNum = document.querySelector('#first-num').value;
   let secondNum = document.querySelector('#second-num').value;
   let operator = document.querySelector('#operator').value;
-  if(typeof firstNum != 'number'){
+  if(typeof Number(firstNum) != 'number'){
     throw new IncorrectNumError('First num is not a number', firstNum);
   }
-  if(typeof secondNum != 'number'){
+  if(typeof Number(secondNum) != 'number'){
     throw new IncorrectNumError('Second num is not a number', secondNum);
   }
   output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
